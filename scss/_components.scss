@@ -1,5 +1,6 @@
 @use "./absracts" as *;
 .heading-1 {
+    text-align: center;
     font-size: 1.5rem;
     color: $color-white;
     margin-bottom: 2rem;
@@ -41,6 +42,8 @@
     position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
+    z-index: 1;
+    transition: margin-bottom 0.25s ease;
     &__input {
         font: 400 112.5%/1 "Rubik", sans-serif;
         background-color: $color-white;
@@ -48,7 +51,7 @@
         border-radius: 0.5rem;
         outline: none;
         border: none;
-        width: 40vw;
+        width: 100%;
         transition: background-color 0.25s ease;
         &:focus,
         &:hover {
@@ -73,8 +76,45 @@
             background-color: darken($color-black, 10%);
         }
     }
+    &__error {
+        font-size: 0.75rem;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        background-color: $color-red;
+        color: $color-white;
+        padding: 2em 0.5em 0.5em;
+        border-radius: 0.5rem;
+        transition: bottom 0.25s ease, opacity 0.25s ease;
+    }
+    &--error {
+        margin-bottom: 1.875rem;
+    }
+    &--error+&__error {
+        bottom: -1.375rem;
+        opacity: 1;
+    }
 }
 
 .search-form {
-    margin-bottom: 0;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.ownIP {
+    font-size: 0.75rem;
+    padding: 0.5em 1em;
+    background-color: $color-black;
+    color: $color-white;
+    border-radius: 1em;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.25s ease;
+    &:hover {
+        transform: scale(1.05);
+        background-color: darken($color-black, 10%);
+    }
 }

@@ -6,7 +6,7 @@
     "scripts": {
         "watch": "sass --watch scss/main.scss public/css/main.css",
         "start": "live-server",
-        "compile": "scss/main.scss scss/comp.css",
+        "compile": "sass scss/main.scss scss/comp.css",
         "prefix": "postcss scss/comp.css -u autoprefixer -o scss/prefix.css",
         "compress": "sass scss/prefix.css public/css/main.css --style compressed",
         "build": "npm-run-all compile prefix compress"

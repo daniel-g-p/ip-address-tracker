@@ -11,40 +11,44 @@
 
 <body>
     <header class="header">
-        <h1 class="heading-1">IP Address Tracker</h1>
-        <form action="" class="search-form">
-            <div class="input-group">
-                <input type="text" name="searchQuery" class="input-group__input" placeholder="Search for any IP address or domain">
-                <button class="input-group__button">
-                    <img src="img/icon-arrow.svg" alt="Search">
-                </button>
-            </div>
-        </form>
-        <!-- <div class="theme">
+        <div class="form-container">
+            <h1 class="heading-1">IP Address Tracker</h1>
+            <form action="" class="search-form">
+                <div class="input-group">
+                    <input type="text" name="searchQuery" class="input-group__input" placeholder="Search for any IP address or domain">
+                    <button class="input-group__button">
+                        <img src="img/icon-arrow.svg" alt="Search">
+                    </button>
+                </div>
+                <div class="input-group__error">Please enter a valid IP address or domain</div>
+            </form>
+            <div class="ownIP">Use my own IP address</div>
+            <!-- <div class="theme">
             <span class="theme__label"></span>
             <input type="checkbox" id="theme" class="theme__input">
             <label for="theme">
                 <div class="theme__toggle"></div>
             </label>
         </div> -->
+        </div>
     </header>
     <main class="main">
         <div class="result">
             <div class="result__group result__group--ip">
                 <h2 class="heading-2">IP Address</h2>
-                <p class="result__output result__output--ip">192.212.174.101</p>
+                <p class="result__output result__output--ip">-</p>
             </div>
             <div class="result__group result__group--location">
                 <h2 class="heading-2">Location</h2>
-                <p class="result__output result__output--location">Brooklyn, NY 10001</p>
+                <p class="result__output result__output--location">-</p>
             </div>
             <div class="result__group result__group--timezone">
                 <h2 class="heading-2">Timezone</h2>
-                <p class="result__output result__output--timezone">UTC-05:00</p>
+                <p class="result__output result__output--timezone">-</p>
             </div>
-            <div class="result__group result__group--timezone">
+            <div class="result__group result__group--isp">
                 <h2 class="heading-2">ISP</h2>
-                <p class="result__output result__output--timezone">SpaceX Starlink</p>
+                <p class="result__output result__output--isp">-</p>
             </div>
         </div>
         <div class="map">
