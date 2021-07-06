@@ -1,3 +1,4 @@
+@use "./absracts" as *;
 @font-face {
     font-family: "Rubik";
     src: url("fonts/rubik-bold.woff2") format("woff2"), url("fonts/rubik-bold.woff") format("woff");
@@ -33,4 +34,8 @@ html {
 
 body {
     box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }

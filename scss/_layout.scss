@@ -1,0 +1,16 @@
+.header {
+    position: relative;
+    background-image: url("../img/pattern-bg.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0 6rem;
+}
+
+.main {
+    position: relative;
+    background-color: green;
+    flex-grow: 1;
+}
