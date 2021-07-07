@@ -17,10 +17,14 @@
                 <div class="input-group">
                     <input type="text" name="searchQuery" class="input-group__input" placeholder="Search for any IP address or domain">
                     <button class="input-group__button">
-                        <img src="img/icon-arrow.svg" alt="Search">
+                        <img src="img/icon-arrow.svg" alt="Search" class="input-group__button-arrow">
+                        <div class="loader">
+                            <div class="loader__circle loader__circle--1"></div>
+                            <div class="loader__circle loader__circle--2"></div>
+                        </div>
                     </button>
                 </div>
-                <div class="input-group__error">Please enter a valid IP address or domain</div>
+                <div class="input-group__error">Please enter a valid IP address or domain...</div>
             </form>
             <div class="ownIP">Use my own IP address</div>
             <!-- <div class="theme">
