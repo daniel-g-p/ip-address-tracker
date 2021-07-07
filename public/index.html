@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IP Address Tracker</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
@@ -27,13 +29,6 @@
                 <div class="input-group__error">Please enter a valid IP address or domain...</div>
             </form>
             <div class="ownIP">Use my own IP address</div>
-            <!-- <div class="theme">
-            <span class="theme__label"></span>
-            <input type="checkbox" id="theme" class="theme__input">
-            <label for="theme">
-                <div class="theme__toggle"></div>
-            </label>
-        </div> -->
         </div>
     </header>
     <main class="main">
@@ -55,9 +50,20 @@
                 <p class="result__output result__output--isp">-</p>
             </div>
         </div>
-        <div class="map">
+        <div id='map' class="map">
+            <img src="img/icon-location.svg" alt="Map Marker" class="map__marker">
         </div>
+        <script src="js/map.js"></script>
     </main>
+    <div class="modal">
+        <form action="" class="location-permission">
+            <h3 class="heading-3">Permissions</h3>
+            <p class="location-permission__text">Do you want to grant access to your location for optimal performance?
+            </p>
+            <button class="button button--fill" id="allowLocation">Yes</button>
+            <button class="button button--outline" id="denyLocation">No</button>
+        </form>
+    </div>
     <script src="js/main.js"></script>
 </body>
 

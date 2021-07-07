@@ -39,3 +39,52 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.heading-1 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: $color-white;
+    margin-bottom: 2rem;
+}
+
+.heading-2 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $color-grey;
+    margin-bottom: 0.5rem;
+}
+
+.heading-3 {
+    font-size: 1.25rem;
+    grid-column: 1 / span 2;
+}
+
+.button {
+    outline: none;
+    font-family: "Rubik", sans-serif;
+    padding: 0.75em 1.5em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 1.5em;
+    font-size: 0.75rem;
+    &--fill {
+        border: none;
+        background-color: $color-black;
+        color: $color-white;
+        transition: background-color 0.25s ease;
+        &:hover {
+            background-color: darken($color-black, 10%);
+        }
+    }
+    &--outline {
+        border: 2px solid $color-black;
+        background-color: $color-white;
+        color: $color-black;
+        transition: background-color 0.25s ease;
+        &:hover {
+            background-color: darken($color-white, 10%);
+        }
+    }
+}

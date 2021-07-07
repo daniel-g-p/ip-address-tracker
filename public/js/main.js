@@ -7,9 +7,30 @@ const submitButton = document.querySelector(".input-group__button");
 const submitButtonArrow = document.querySelector(".input-group__button-arrow");
 const submitButtonLoader = document.querySelector(".loader");
 const ownIpButton = document.querySelector(".ownIP");
+const permissionModal = document.querySelector(".modal");
+const permissionButtons = document.querySelectorAll(".button");
 
 const ipFormat = /^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$/;
 const domainFormat = /([a-z0-9]+\.)?([a-z0-9][a-z0-9-]*)?((\.[a-z]{2,6})|(\.[a-z]{2,6})(\.[a-z]{2,6}))$/;
+
+window.onload = () => {
+    setTimeout(() => {
+        permissionModal.classList.toggle("modal--active");
+    }, 1000);
+};
+
+permissionButtons.forEach(button => {
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+        permissionModal.classList.toggle("modal--active");
+        if (button.id === "allowLocation") {
+            flyToUserLocation();
+        } else {
+            flyToRandomLocation();
+        }
+    });
+
+});
 
 searchForm.addEventListener("submit", async(e) => {
     e.preventDefault();
