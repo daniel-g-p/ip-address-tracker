@@ -128,26 +128,6 @@ body {
   height: 100%;
 }
 
-.modal {
-  position: fixed;
-  z-index: 3;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(43, 43, 43, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-.modal--active {
-  pointer-events: all;
-  opacity: 1;
-}
-
 .result {
   position: absolute;
   top: 0;
@@ -302,23 +282,6 @@ body {
 
 .map__marker {
   height: 3rem;
-}
-
-.location-permission {
-  background-color: white;
-  padding: 2.5rem;
-  border-radius: 1rem;
-  text-align: center;
-  max-width: 20rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, min-content);
-  gap: 1rem;
-}
-.location-permission__text {
-  grid-column: 1/-1;
-  grid-row: 2/3;
-  line-height: 1.5;
 }
 
 /*# sourceMappingURL=main.css.map */

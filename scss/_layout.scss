@@ -29,22 +29,22 @@
     height: 100%;
 }
 
-.modal {
-    position: fixed;
-    z-index: 3;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba($color-black, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-    &--active {
-        pointer-events: all;
-        opacity: 1;
-    }
-}
+// .modal {
+//     position: fixed;
+//     z-index: 3;
+//     left: 0;
+//     top: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: rgba($color-black, 0.5);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     pointer-events: none;
+//     opacity: 0;
+//     transition: opacity 0.25s ease;
+//     &--active {
+//         pointer-events: all;
+//         opacity: 1;
+//     }
+// }

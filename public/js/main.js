@@ -13,24 +13,13 @@ const permissionButtons = document.querySelectorAll(".button");
 const ipFormat = /^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$/;
 const domainFormat = /([a-z0-9]+\.)?([a-z0-9][a-z0-9-]*)?((\.[a-z]{2,6})|(\.[a-z]{2,6})(\.[a-z]{2,6}))$/;
 
+const geo = navigator.geolocation;
+
 window.onload = () => {
-    setTimeout(() => {
-        permissionModal.classList.toggle("modal--active");
-    }, 1000);
+    if (geo) {
+        getLocation();
+    }
 };
-
-permissionButtons.forEach(button => {
-    button.addEventListener("click", (e) => {
-        e.preventDefault();
-        permissionModal.classList.toggle("modal--active");
-        if (button.id === "allowLocation") {
-            flyToUserLocation();
-        } else {
-            flyToRandomLocation();
-        }
-    });
-
-});
 
 searchForm.addEventListener("submit", async(e) => {
     e.preventDefault();
@@ -112,4 +101,10 @@ const toggleLoader = (toggle) => {
         submitButtonArrow.classList.remove("input-group__button-arrow--loading");
         submitButtonLoader.classList.remove("loader--loading");
     }
+}
+
+const getLocation = () => {
+    geo.getCurrentPosition((position) => {
+        console.log(position.coords.latitude, position.coords.longitude);
+    });
 }
