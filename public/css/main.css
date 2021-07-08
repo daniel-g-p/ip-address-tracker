@@ -104,7 +104,7 @@ body {
   background-image: url("../img/pattern-bg.png");
   background-size: cover;
   background-position: center;
-  padding: 3rem 0 6rem;
+  padding: 3rem 0 0;
 }
 
 .form-container {
@@ -131,16 +131,16 @@ body {
 }
 
 .result {
-  position: absolute;
-  top: 0;
-  left: 50%;
+  position: relative;
   z-index: 1;
-  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  transform: translateY(50%);
   background-color: white;
   border-radius: 1rem;
   width: 75vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   padding: 2.5rem 0;
   box-shadow: 0 0.5rem 2rem rgba(43, 43, 43, 0.25);
 }
@@ -314,7 +314,7 @@ body {
 .collapse-header__button {
   position: absolute;
   bottom: 1.5rem;
-  right: 3rem;
+  right: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
