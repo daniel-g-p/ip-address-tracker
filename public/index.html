@@ -9,11 +9,22 @@
     <link rel="stylesheet" href="css/main.css">
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+    </style>
 </head>
 
 <body>
+    <script>
+        document.body.style.visibility = "hidden";
+        document.body.style.opacity = 0;
+    </script>
     <header class="header">
-        <div class="form-container">
+        <div class="form-container form-container--inactive" style="max-height: 0;">
             <h1 class="heading-1">IP Address Tracker</h1>
             <form action="" class="search-form">
                 <div class="input-group">
@@ -30,6 +41,10 @@
             </form>
             <div class="ownIP">Use my own IP address</div>
         </div>
+        <input type="checkbox" id="collapse-header" class="collapse-header">
+        <label class="collapse-header__button" for="collapse-header">
+            <img src="img/icon-arrow.svg" alt="Collapse Header" class="collapse-header__icon">
+        </label>
     </header>
     <main class="main">
         <div class="result">
@@ -46,12 +61,15 @@
                 <p class="result__output result__output--timezone">-</p>
             </div>
             <div class="result__group result__group--isp">
-                <h2 class="heading-2">ISP</h2>
+                <h2 class="heading-2">Service Provider</h2>
                 <p class="result__output result__output--isp">-</p>
             </div>
         </div>
         <div id='map' class="map">
             <img src="img/icon-location.svg" alt="Map Marker" class="map__marker">
+        </div>
+        <div class="center-location">
+            <img src="img/icon-location.svg" alt="Map Marker" class="center-location__icon">
         </div>
         <script src="js/map.js"></script>
     </main>

@@ -110,8 +110,10 @@ body {
 .form-container {
   width: 40vw;
   margin: 0 auto;
+  transition: opacity 0.25s ease, max-height 0.75s ease;
 }
 .form-container--inactive {
+  overflow: hidden;
   opacity: 0;
   pointer-events: none;
 }
@@ -282,6 +284,55 @@ body {
 
 .map__marker {
   height: 3rem;
+}
+
+.center-location {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #3377ff;
+  box-shadow: 0 0.5rem 1rem rgba(43, 43, 43, 0.5);
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+.center-location:hover {
+  background-color: #0055ff;
+}
+.center-location__icon {
+  height: 50%;
+}
+
+.collapse-header {
+  display: none;
+}
+.collapse-header__button {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.collapse-header__button:hover {
+  background-color: rgba(255, 255, 255, 0.33);
+}
+.collapse-header__icon {
+  transform: rotate(-90deg);
+}
+.collapse-header:checked + .collapse-header__button {
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=main.css.map */

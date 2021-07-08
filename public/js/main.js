@@ -1,4 +1,5 @@
 const searchForm = document.querySelector(".search-form");
+const formContainer = document.querySelector(".form-container");
 const inputGroup = document.querySelector(".input-group");
 const searchQuery = document.querySelector(".input-group__input");
 const inputError = document.querySelector(".input-group__error");
@@ -9,19 +10,22 @@ const submitButtonLoader = document.querySelector(".loader");
 const ownIpButton = document.querySelector(".ownIP");
 const permissionModal = document.querySelector(".modal");
 const permissionButtons = document.querySelectorAll(".button");
+const centerLocation = document.querySelector(".center-location");
+const collapseHeader = document.querySelector(".collapse-header");
 
 const ipFormat = /^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$/;
 const domainFormat = /([a-z0-9]+\.)?([a-z0-9][a-z0-9-]*)?((\.[a-z]{2,6})|(\.[a-z]{2,6})(\.[a-z]{2,6}))$/;
 
 const geo = navigator.geolocation;
 
-window.onload = async() => {
-    if (geo) {
-        const location = await getLocation();
-        console.log(location);
-        // console.log("in main function: ", );
-        // flyToLocation(location);
-    }
+window.onload = () => {
+    initializeLocation();
+    formContainer.classList.toggle("form-container--inactive");
+    formContainer.style.maxHeight = formContainer.scrollHeight + inputError.scrollHeight + "px";
+    setTimeout(() => {
+        document.body.style.visibility = "visible";
+        document.body.style.opacity = 1;
+    }, 1000);
 };
 
 searchForm.addEventListener("submit", async(e) => {
@@ -32,19 +36,42 @@ searchForm.addEventListener("submit", async(e) => {
         return;
     }
     const result = await fetchData(searchQuery.value, inputType);
-    console.log(result);
     applyData(result);
+    flyToLocation([result.location.lng, result.location.lat]);
 });
 
 ownIpButton.addEventListener("click", async() => {
     const result = await fetchData("", "");
     searchQuery.value = result.ip;
-    applyData(result);;
+    applyData(result);
+    flyToLocation([result.location.lng, result.location.lat]);
+});
+
+centerLocation.addEventListener("click", () => {
+    markerLocation = [marker._lngLat.lng, marker._lngLat.lat];
+    flyToLocation(markerLocation);
 });
 
 searchQuery.addEventListener("input", () => {
     triggerError(false);
+});
+
+collapseHeader.addEventListener("change", () => {
+    formContainer.classList.toggle("form-container--inactive");
+    if (formContainer.classList.contains("form-container--inactive")) {
+        formContainer.style.maxHeight = 0;
+    } else {
+        formContainer.style.maxHeight = formContainer.scrollHeight + inputError.scrollHeight + "px";
+    }
 })
+
+const initializeLocation = async() => {
+    if (geo) {
+        const location = await getLocation();
+        const coords = location.coords;
+        flyToLocation([coords.longitude, coords.latitude]);
+    }
+};
 
 const fetchData = async(query, type) => {
     toggleLoader(true);
@@ -115,7 +142,9 @@ const getLocation = () => {
 const flyToLocation = (location) => {
     map.flyTo({
         center: location,
+        zoom: 10,
         curve: 1.5,
         speed: 1.5,
-    })
+    });
+    marker.setLngLat(location);
 }

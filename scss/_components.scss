@@ -158,19 +158,51 @@
     }
 }
 
-// .location-permission {
-//     background-color: $color-white;
-//     padding: 2.5rem;
-//     border-radius: 1rem;
-//     text-align: center;
-//     max-width: 20rem;
-//     display: grid;
-//     grid-template-columns: repeat(2, 1fr);
-//     grid-template-rows: repeat(3, min-content);
-//     gap: 1rem;
-//     &__text {
-//         grid-column: 1 / -1;
-//         grid-row: 2 / 3;
-//         line-height: 1.5;
-//     }
-// }
+.center-location {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: $color-blue;
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.5);
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    &:hover {
+        background-color: darken($color-blue, 10%);
+    }
+    &__icon {
+        height: 50%;
+    }
+}
+
+.collapse-header {
+    display: none;
+    &__button {
+        position: absolute;
+        bottom: 1.5rem;
+        right: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: rgba($color-white, 0.25);
+        cursor: pointer;
+        transition: all 0.25s ease;
+        &:hover {
+            background-color: rgba($color-white, 0.33);
+        }
+    }
+    &__icon {
+        transform: rotate(-90deg);
+    }
+    &:checked+&__button {
+        transform: rotate(180deg);
+    }
+}
