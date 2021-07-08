@@ -41,12 +41,6 @@
             </form>
             <div class="ownIP">Use my own IP address</div>
         </div>
-        <input type="checkbox" id="collapse-header" class="collapse-header">
-        <label class="collapse-header__button" for="collapse-header">
-            <img src="img/icon-arrow.svg" alt="Collapse Header" class="collapse-header__icon">
-        </label>
-    </header>
-    <main class="main">
         <div class="result">
             <div class="result__group result__group--ip">
                 <h2 class="heading-2">IP Address</h2>
@@ -65,6 +59,12 @@
                 <p class="result__output result__output--isp">-</p>
             </div>
         </div>
+        <input type="checkbox" id="collapse-header" class="collapse-header">
+        <label class="collapse-header__button" for="collapse-header">
+            <img src="img/icon-arrow.svg" alt="Collapse Header" class="collapse-header__icon">
+        </label>
+    </header>
+    <main class="main">
         <div id='map' class="map">
             <img src="img/icon-location.svg" alt="Map Marker" class="map__marker">
         </div>
@@ -73,15 +73,6 @@
         </div>
         <script src="js/map.js"></script>
     </main>
-    <!-- <div class="modal">
-        <form action="" class="location-permission">
-            <h3 class="heading-3">Location Access</h3>
-            <p class="location-permission__text">Do you want to grant access to your location for optimal performance?
-            </p>
-            <button class="button button--fill" id="allowLocation">Yes</button>
-            <button class="button button--outline" id="denyLocation">No</button>
-        </form>
-    </div> -->
     <script src="js/main.js"></script>
 </body>
 
