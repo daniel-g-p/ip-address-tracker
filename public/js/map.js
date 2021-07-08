@@ -2,8 +2,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWVsLWdwIiwiYSI6ImNrcXRmNXliYzA3bTIycHA4c
 let map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/daniel-gp/ckqtg9brz5axa18qs0ic1dhdo',
-    center: [4.48, 50.84],
-    zoom: 9,
+    center: [0, 0],
+    zoom: 10,
     localFontFamily: "Rubik"
 });
 
@@ -11,7 +11,7 @@ let marker = new mapboxgl.Marker({
         color: "#000000",
         draggable: false,
         element: document.querySelector(".map__marker"),
-    }).setLngLat([4.48, 50.84])
+    }).setLngLat([0, 0])
     .addTo(map)
 
 // setTimeout(() => {

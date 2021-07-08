@@ -15,9 +15,12 @@ const domainFormat = /([a-z0-9]+\.)?([a-z0-9][a-z0-9-]*)?((\.[a-z]{2,6})|(\.[a-z
 
 const geo = navigator.geolocation;
 
-window.onload = () => {
+window.onload = async() => {
     if (geo) {
-        getLocation();
+        const location = await getLocation();
+        console.log(location);
+        // console.log("in main function: ", );
+        // flyToLocation(location);
     }
 };
 
@@ -104,7 +107,15 @@ const toggleLoader = (toggle) => {
 }
 
 const getLocation = () => {
-    geo.getCurrentPosition((position) => {
-        console.log(position.coords.latitude, position.coords.longitude);
+    return new Promise((resolve, reject) => {
+        geo.getCurrentPosition(resolve, reject)
     });
+}
+
+const flyToLocation = (location) => {
+    map.flyTo({
+        center: location,
+        curve: 1.5,
+        speed: 1.5,
+    })
 }
