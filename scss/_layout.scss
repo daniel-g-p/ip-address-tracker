@@ -4,12 +4,15 @@
     background-image: url("../img/pattern-bg.png");
     background-size: cover;
     background-position: center;
+    padding: 3rem 3rem 0;
+    @include respond(768px) {
+        padding: 1.5rem 1.5rem 0;
+    }
 }
 
 .form-container {
-    width: 75vw;
     max-width: 36rem;
-    margin: 3rem auto 0;
+    margin: 0 auto;
     transition: opacity 0.25s ease, max-height 0.75s ease, margin-top 0.75s ease;
     &--inactive {
         margin-top: 0;
@@ -25,8 +28,19 @@
 }
 
 .map {
+    background-color: green;
     position: relative;
     flex: 1 0 100%;
-    width: 100%;
     min-height: 100%;
+    &__marker {
+        height: 3rem;
+    }
+}
+
+.mapboxgl {
+    &-ctrl-attrib,
+    &-ctrl-logo {
+        display: none;
+        opacity: 0;
+    }
 }

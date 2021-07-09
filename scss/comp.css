@@ -53,6 +53,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
 }
 
 .heading-1 {
@@ -114,12 +115,17 @@ body {
   background-image: url("../img/pattern-bg.png");
   background-size: cover;
   background-position: center;
+  padding: 3rem 3rem 0;
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 1.5rem 1.5rem 0;
+  }
 }
 
 .form-container {
-  width: 75vw;
   max-width: 36rem;
-  margin: 3rem auto 0;
+  margin: 0 auto;
   transition: opacity 0.25s ease, max-height 0.75s ease, margin-top 0.75s ease;
 }
 .form-container--inactive {
@@ -135,10 +141,18 @@ body {
 }
 
 .map {
+  background-color: green;
   position: relative;
   flex: 1 0 100%;
-  width: 100%;
   min-height: 100%;
+}
+.map__marker {
+  height: 3rem;
+}
+
+.mapboxgl-ctrl-attrib, .mapboxgl-ctrl-logo {
+  display: none;
+  opacity: 0;
 }
 
 .result {
@@ -147,9 +161,9 @@ body {
   margin: -3rem auto 0;
   background-color: white;
   border-radius: 1rem;
-  width: calc(100% - 6rem);
+  width: 100%;
   max-width: 64rem;
-  margin: 3rem auto;
+  margin: 1rem auto;
   display: flex;
   justify-content: flex-start;
   padding: 2.5rem 0;
@@ -159,6 +173,7 @@ body {
   .result {
     flex-direction: column;
     align-items: center;
+    padding: 1.5rem 0;
   }
 }
 .result__group {
@@ -314,10 +329,6 @@ body {
 .loader--loading {
   opacity: 1;
   transform: scale(1);
-}
-
-.map__marker {
-  height: 3rem;
 }
 
 .center-location {

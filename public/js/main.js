@@ -13,6 +13,8 @@ const permissionModal = document.querySelector(".modal");
 const permissionButtons = document.querySelectorAll(".button");
 const centerLocation = document.querySelector(".center-location");
 const collapseHeader = document.querySelector(".collapse-header");
+const mapContainer = document.querySelector(".map");
+const mapCanvas = document.querySelector(".mapboxgl-canvas");
 
 const ipFormat = /^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$/;
 const domainFormat = /([a-z0-9]+\.)?([a-z0-9][a-z0-9-]*)?((\.[a-z]{2,6})|(\.[a-z]{2,6})(\.[a-z]{2,6}))$/;
@@ -22,6 +24,7 @@ const geo = navigator.geolocation;
 window.onload = () => {
     initializeLocation();
     adjustResultMargin();
+    adjustMap();
     formContainer.classList.toggle("form-container--inactive");
     formContainer.style.maxHeight = formContainer.scrollHeight + inputError.scrollHeight + "px";
     setTimeout(() => {
@@ -154,4 +157,8 @@ const flyToLocation = (location) => {
 
 const adjustResultMargin = () => {
     searchResult.style.marginBottom = -searchResult.scrollHeight / 2 + "px";
+}
+
+const adjustMap = () => {
+    mapCanvas.style.minHeight = mapContainer.scrollHeight + "px";
 }
