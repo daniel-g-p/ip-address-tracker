@@ -3,6 +3,7 @@ const formContainer = document.querySelector(".form-container");
 const inputGroup = document.querySelector(".input-group");
 const searchQuery = document.querySelector(".input-group__input");
 const inputError = document.querySelector(".input-group__error");
+const searchResult = document.querySelector(".result");
 const searchOutputs = document.querySelectorAll(".result__output");
 const submitButton = document.querySelector(".input-group__button");
 const submitButtonArrow = document.querySelector(".input-group__button-arrow");
@@ -20,6 +21,7 @@ const geo = navigator.geolocation;
 
 window.onload = () => {
     initializeLocation();
+    adjustResultMargin();
     formContainer.classList.toggle("form-container--inactive");
     formContainer.style.maxHeight = formContainer.scrollHeight + inputError.scrollHeight + "px";
     setTimeout(() => {
@@ -99,6 +101,7 @@ const applyData = (data) => {
     searchOutputs.forEach((element, index) => {
         element.innerHTML = requiredData[index];
     });
+    adjustResultMargin();
 }
 
 const validateQuery = () => {
@@ -147,4 +150,8 @@ const flyToLocation = (location) => {
         speed: 1.5,
     });
     marker.setLngLat(location);
+}
+
+const adjustResultMargin = () => {
+    searchResult.style.marginBottom = -searchResult.scrollHeight / 2 + "px";
 }

@@ -17,3 +17,9 @@ $color-blue: #3377ff;
         opacity: 0;
     }
 }
+
+@mixin respond($screen-width) {
+    @media (max-width: $screen-width) {
+        @content
+    }
+}

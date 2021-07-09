@@ -30,6 +30,9 @@
 
 html {
     font: 400 112.5%/1 "Rubik", sans-serif;
+    @include respond(960px) {
+        font-size: 100%;
+    }
 }
 
 body {
@@ -44,7 +47,7 @@ body {
     text-align: center;
     font-size: 1.5rem;
     color: $color-white;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .heading-2 {
@@ -53,6 +56,9 @@ body {
     text-transform: uppercase;
     color: $color-grey;
     margin-bottom: 0.5rem;
+    @include respond(768px) {
+        margin-bottom: 0;
+    }
 }
 
 .heading-3 {

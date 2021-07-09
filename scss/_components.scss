@@ -1,30 +1,43 @@
 @use "./absracts" as *;
 .result {
     position: relative;
-    // top: 0;
-    // left: 50%;
     z-index: 1;
-    margin: 0 auto;
-    transform: translateY(50%);
+    margin: -3rem auto 0;
     background-color: $color-white;
     border-radius: 1rem;
-    width: 75vw;
+    width: calc(100% - 6rem);
+    max-width: 64rem;
+    margin: 3rem auto;
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
     padding: 2.5rem 0;
     box-shadow: 0 0.5rem 2rem rgba($color-black, 0.25);
+    @include respond(768px) {
+        flex-direction: column;
+        align-items: center;
+    }
     &__group {
         padding: 0 1.5rem;
         flex: 0 0 25%;
+        @include respond(768px) {
+            text-align: center;
+            border: none;
+        }
         &:not(:last-child) {
             border-right: 2px solid rgba($color-grey, 0.5);
+            @include respond(768px) {
+                margin-bottom: 1rem;
+                border: none;
+            }
         }
     }
     &__output {
         font-size: 1.25rem;
         line-height: 1.5;
         font-weight: 500;
+        @include respond(768px) {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -162,8 +175,8 @@
 
 .center-location {
     position: absolute;
-    bottom: 3rem;
-    right: 3rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,17 +199,21 @@
     display: none;
     &__button {
         position: absolute;
-        bottom: 1.5rem;
+        top: 1.5rem;
         right: 1.5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 3rem;
-        height: 3rem;
+        width: 2rem;
+        height: 2rem;
         border-radius: 50%;
         background-color: rgba($color-white, 0.25);
         cursor: pointer;
         transition: all 0.25s ease;
+        @include respond(768px) {
+            top: 0.75rem;
+            right: 0.75rem;
+        }
         &:hover {
             background-color: rgba($color-white, 0.33);
         }

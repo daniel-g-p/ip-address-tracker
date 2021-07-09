@@ -13,11 +13,3 @@ let marker = new mapboxgl.Marker({
         element: document.querySelector(".map__marker"),
     }).setLngLat([0, 0])
     .addTo(map)
-
-// setTimeout(() => {
-//     map.flyTo({
-//         center: [0, 0],
-//         speed: 1.5,
-//         curve: 1.5
-//     })
-// }, 5000);
