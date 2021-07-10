@@ -24,7 +24,6 @@ const geo = navigator.geolocation;
 window.onload = () => {
     initializeLocation();
     adjustResultMargin();
-    adjustMap();
     formContainer.classList.toggle("form-container--inactive");
     formContainer.style.maxHeight = formContainer.scrollHeight + inputError.scrollHeight + "px";
     setTimeout(() => {
@@ -157,8 +156,4 @@ const flyToLocation = (location) => {
 
 const adjustResultMargin = () => {
     searchResult.style.marginBottom = -searchResult.scrollHeight / 2 + "px";
-}
-
-const adjustMap = () => {
-    mapCanvas.style.minHeight = mapContainer.scrollHeight + "px";
 }

@@ -13,7 +13,3 @@ let marker = new mapboxgl.Marker({
         element: document.querySelector(".map__marker"),
     }).setLngLat([0, 0])
     .addTo(map);
-
-// map.on("load", () => {
-//     map.resize();
-// });
