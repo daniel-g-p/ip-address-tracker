@@ -4,40 +4,24 @@ This IP address tracker is a tool that can be used to test the tracability of yo
 
 ## Table of Contents
 
-1. [Background](#background)
-2. [Features](#features)
-3. [Technologies](#technologies)
-4. [Development](#devlopment)
-5. [References](#references)
+* [Background](#background)
+* [Features](#features)
+* [Technologies](#technologies)
+* [Development](#development)
+* [Status](#status)
 
 ## Motivation
 
-In order to work on my ability to integrate web APIs into my projects, I took on this challenge from Frontend Mentor. The challenged also happened to require the use of "localStorage", which was a new concept that I wanted to explore.
-
-## Technologies
-
-### HTML, CSS, JAVASCRIPT
-
-This project was built responsively with HTML, CSS, and JS in their purest form. The design attempts to replicate the template provided by the challenge as closely as possible. Aside from the integration of the API itself, one of the more challenging aspects of the project was adding animations to element that were created dynamically through the DOM.
-
-### Shrtcode API
-
-The main tool on the website is powered by the free Shrtcode API, which is used to shorten URLs and save them as more compact links.
-
-### Vercel
-
-In order to deploy the project, I used the free hosting platform Vercel.
+This project was primarily meant as a practice project with the purpose of developing my skills working with APIs. It utilizes two APIs and combines the data fetched from both into one coherent tool.
 
 ## Features
 
-### Link Shortening and Saving
+The IP address tracker allows user to search for any IP address or domain to trace its location. It also offers automatic geolocation and IP address detection, provided the user grants permission for the application to do so.
 
-Clicking any of the "Get Started" buttons on the page will take you to the main section, which contains a form that you can use to submit any URL that you want to shorten. The URL you enter is validated on the front end and assuming that it is valid, it will be processed, shortened, and added to your link list. The latter allows you to copy the short link directly to your clipboard.
+## Technologies
 
-### List Clearing
+The project was built with HTML, CSS, and JavaScript and two APIs. The [Ipify API](https://geo.ipify.org/) is used for everything related to IP addresses and domains and forms the basis of the application. Based on the data fetched from the Ipify API, [Mapbox](https://www.mapbox.com/) was used to create a custom map theme that automatically locates the user, allows them to recenter the map, and automatically navigates to a new location whene a new search query is started.
 
-All the links you shorten are saved with "localStorage", but you can clear all links whenever you like using the "Clear all links" button.
+## Status
 
-## Project Status
-
-Although the tool might seem fully fucntional, I would like to add a functionality to it that will allow users to remove individual links from their list, as this currently isn't possible. Aside from that, I may turn this one-page project into a multipage site that includes a "Features" and a "Pricing" page as suggested by the links in the header
+Though fully functional, there is one minor bug in the application that occurs when the user collapses the search bar to enlargen the map. A white border that the map should usually extend into may appear at the bottom on your device, and I will hopefully get to fix the issue soon.
