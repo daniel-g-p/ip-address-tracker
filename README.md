@@ -1,4 +1,4 @@
-# Shortly - URL Shortening Tool
+# IP Address Tracker
 
 This IP address tracker is a tool that can be used to test the tracability of your device or any IP address or domain registered on the internet. The tool will indicate on a map where exactly the IP address you searched for is located.
 
